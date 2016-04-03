@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Cat Clicker</title>
+  <link rel="stylesheet" href="css/catclicker.css">
+</head>
+<body>
+	<h1>Cat Clicker</h1>
+	<div id="george">
+		<img id="george-img" src="images/girgi.jpg">
+		<div id="count"></div>
+	</div>
+  <script>
+	var catElem = document.getElementById('george');
+	var catImageElem = document.getElementById('george-img');
+	var countElem = document.getElementById('count');
+	var catClickCount = 0;
+
+	//increment count
+	function incrementCounter(){
+		catClickCount++;
+		view.render();
+	}
+
+	//update the counter
+	var view = {
+		render:function() {
+			countElem.innerHTML = catClickCount;
+		}
+	}
+	//attach event listeners
+	catElem.addEventListener('click', function(){
+      incrementCounter();
+	});
+
+	//render
+	view.render();
+</script>
+
+</body>
+</html>
